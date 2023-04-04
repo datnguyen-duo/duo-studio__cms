@@ -1,0 +1,64 @@
+#error {
+  background: $color-black;
+  color: $color-white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 4rem;
+
+  header {
+    position: relative;
+    margin: auto;
+    h1 {
+      mix-blend-mode: difference;
+    }
+    video {
+      width: 20vw;
+      height: 26vw;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: -1;
+      object-fit: cover;
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 55vw;
+        height: 75vw;
+        max-width: 22rem;
+        max-height: 30rem;
+      }
+    }
+  }
+
+  span {
+    margin: 0 0 1em;
+  }
+
+  > a {
+    min-width: 115px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: $font-suisse;
+    font-size: 12px;
+    background: $color-pink;
+    color: $color-black;
+    border-radius: 100px;
+    padding: 0.5em 1em;
+    transition: background 0.2s, color 0.2s;
+
+    * {
+      font-family: inherit;
+      font-size: inherit;
+    }
+    &:hover {
+      background: $color-white;
+    }
+  }
+}

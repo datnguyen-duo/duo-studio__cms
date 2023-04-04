@@ -1,19 +1,65 @@
-<nav class="overflow-x-scroll overflow-x-visible-ns flex justify-between items-center center bg-white divider-grey relative">
+<nav>
+  <ul>
+    <li>
+      <a href="/">
+        <img src="/assets/logo.svg" alt="logo" width="52" height="35" />
+      </a>
+    </li>
 
-	<!-- Logo -->
-	<a href="/" class="pa3 db mr4 h-100 w3 flex-none">
-		<img src="/img/logo.svg" alt="Kaldi logo" class="br0 db mb0 w-100"/>
-	</a>
+    <li class="nav-item cursor__hover --highlight" data-attribute-item="home">
+      <a href="/">Home</a>
+    </li>
 
-	<!-- Primary Nav -->
-	<ul class="flex b grey-3">
-		<li><a href="/products" class="pa3 no-underline db">Products</a></li>
+    <li class="nav-item cursor__hover --highlight" data-attribute-item="work">
+      <a href="/work.html">Work</a>
+    </li>
 
-		<li><a href="/values" class="pa3 no-underline db">Values</a></li>
+    <li class="nav-item cursor__hover --highlight" data-attribute-item="studio">
+      <a href="/studio.html">Studio</a>
+    </li>
 
-		<li><a href="/post" class="pa3 no-underline db">Blog</a></li>
+    <li
+      class="nav-item cursor__hover --highlight"
+      data-attribute-item="contact"
+    >
+      <a href="/contact.html">Contact</a>
+    </li>
 
-		<li><a href="/contact" class="pa3 no-underline db">Contact</a></li>
-	</ul>
+    <li class="egg" data-attribute-item="easter-egg">
+      <a href="/archive.html" class="cursor__hide">Archive</a>
+    </li>
+    <div class="row mobile">
+      <div class="col">
+        <span>General Inquiries</span>
+        <a href="mailto:hello@duo-studio.co" class="cursor__hover --highlight"
+          >hello@duo-studio.co</a
+        >
+      </div>
 
+      <div class="col">
+        <span>Follow Us</span>
+        <div class="row">
+          <a
+            href="https://www.instagram.com/duostudio_co/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor__hover --highlight"
+            >Instagram,</a
+          >
+          <a
+            href="https://www.linkedin.com/company/duostudio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cursor__hover --highlight"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="nav-toggle">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </ul>
 </nav>

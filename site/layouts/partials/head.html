@@ -1,34 +1,92 @@
 <head>
-
-  <title>{{ .Title }} | {{ $.Site.Title }}</title>
-
-  {{ $stylesheet := .Site.Data.webpack.main }}
-  {{ with $stylesheet.css }}
-    <link href="{{ relURL . }}" rel="stylesheet">
+  <title>{{ .Title }}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta
+    name="keywords"
+    content="branding, strategy, marketing, web design, web development, graphic design, product design, creative agency"
+  />
+  <meta
+    name="description"
+    content="We are a creative collective that weaves together branding, strategy, and design to create thought-provoking digital experiences for businesses ready to make an impact."
+  />
+  <meta name="url" content="https://duo-studio.co" />
+  <meta property="og:type" content="business.business" />
+  <meta property="og:title" content="Duo Studio" />
+  <meta property="og:url" content="https://duo-studio.co" />
+  <meta
+    property="og:description"
+    content="We are a creative collective that weaves together branding, strategy, and design to create thought-provoking digital experiences for businesses ready to make an impact."
+  />
+  <meta
+    property="og:image"
+    content="https://duo-v2.netlify.app/assets/DuoStudio_Meta.jpg"
+  />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="duo-studio.co" />
+  <meta property="twitter:url" content="https://duo-studio.co" />
+  <meta name="twitter:title" content="Duo Studio" />
+  <meta
+    name="twitter:description"
+    content="We are a creative collective that weaves together branding, strategy, and design to create thought-provoking digital experiences for businesses ready to make an impact."
+  />
+  <meta
+    name="twitter:image"
+    content="https://duo-v2.netlify.app/assets/DuoStudio_Meta.jpg"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="/assets/DuoStudio_Favicon.jpg"
+    sizes="any"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="/assets/DuoStudio_Favicon@16x16.jpg"
+    sizes="16x16"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="/assets/DuoStudio_Favicon.jpg"
+    sizes="32x32"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="/assets/DuoStudio_Favicon@180x180.jpg"
+    sizes="180x180"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="/assets/DuoStudio_Favicon@192x192.jpg"
+    sizes="192x192"
+  />
+  <link
+    rel="shortcut icon"
+    type="image/jpg"
+    href="/assets/DuoStudio_Favicon@512x512.jpg"
+    sizes="512x512"
+  />
+  {{ $stylesheet := .Site.Data.webpack.main }} {{ with $stylesheet.css }}
+  <link href="{{ relURL . }}" rel="stylesheet" />
   {{ end }}
+  <script
+    src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"
+    defer
+  ></script>
+  <script src="https://unpkg.com/@barba/core" defer></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
 
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <base href="{{ $.Site.BaseURL }}">
+  {{/*  <script src="/scripts/libs/gsap.min.js" defer></script>
+  <script src="/scripts/libs/ScrollSmoother.min.js" defer></script>
+  <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
+  <script src="/scripts/libs/SplitText.min.js" defer></script>
+  <script src="/scripts/libs/Draggable.min.js" defer></script>
+  <script src="/scripts/libs/InertiaPlugin.min.js" defer></script>  */}}
 
-	<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet">
-
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#ff4400">
-	<meta name="theme-color" content="#fff">
-
-	<!-- Open Graph -->
-	<meta property="og:type" content="business.business">
-	<meta property="og:title" content="Kaldi | Great coffee with a conscience">
-	<meta property="og:url" content="/">
-	<meta property="og:image" content="/img/og-image.jpg">
-
-  {{ if .IsHome }}
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  {{ end }}
+  {{/*  <script src="global.js"></script>  */}}
 </head>
