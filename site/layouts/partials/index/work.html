@@ -23,12 +23,12 @@
           ></video>
         {{ else }}
         <img
-            src="{{ .file }}"
+            src="{{ .file | absURL }}?nf_resize=fit&w=589"
             srcset="
-                {{ .file }}?nf_resize=fit&w=589 589w
-                {{ .file }}?nf_resize=fit&w=768 768w
-                {{ .file }}?nf_resize=fit&w=840 840w
-                {{ .file }}?nf_resize=fit&w=960 960w
+                {{ .file | absURL }}?nf_resize=fit&w=589 589w
+                {{ .file | absURL }}?nf_resize=fit&w=768 768w
+                {{ .file | absURL }}?nf_resize=fit&w=840 840w
+                {{ .file | absURL}}?nf_resize=fit&w=960 960w
             "
             {{ if eq $i 1 }}
                 sizes="(min-width: 1024px) 50vw, 80vw"
