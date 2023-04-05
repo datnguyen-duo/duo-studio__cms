@@ -561,6 +561,7 @@ function loadIndexScripts() {
     scrollTrigger: {
       trigger: "#banner",
       start: "5px top",
+      
       ease: "expo.inOut",
     },
   });
