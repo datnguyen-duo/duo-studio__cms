@@ -79,14 +79,8 @@
     defer
   ></script>
   <script src="https://unpkg.com/@barba/core" defer></script>
-  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>
-
-  {{/*  <script src="/scripts/libs/gsap.min.js" defer></script>
-  <script src="/scripts/libs/ScrollSmoother.min.js" defer></script>
-  <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
-  <script src="/scripts/libs/SplitText.min.js" defer></script>
-  <script src="/scripts/libs/Draggable.min.js" defer></script>
-  <script src="/scripts/libs/InertiaPlugin.min.js" defer></script>  */}}
-
-  {{/*  <script src="global.js"></script>  */}}
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js" defer></script>  
+  {{ $script := .Site.Data.webpack.main }} {{ with $script.js }}
+  <script src="{{ relURL . }}" defer></script>
+  {{ end }}
 </head>

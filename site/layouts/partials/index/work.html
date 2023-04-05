@@ -1,0 +1,66 @@
+{{ if .IsHome }}
+<section id="work">
+  <div class="st__line"></div>
+  <h1 class="st__headline lg">Selected work</h1>
+  {{ end }}
+  <div class="card-container">
+    {{ range $i, $p := .Params.work.projects }}
+    <a
+      class="card cursor__hover st__image-container"
+      data-attribute-text="view"
+      href='{{ .link | relURL }}'
+    >
+      <div class="inner st__image" {{ if (modBool $i 2) }}data-attribute-pos="right"{{ end }}>
+        <div class="img-wrapper">
+        {{ if strings.Contains .file "mp4" }}
+          <video
+            src="{{ .file }}"
+            playsinline
+            muted
+            loop
+            autoplay
+            preload="none"
+          ></video>
+        {{ else }}
+        <img
+            src="{{ .file }}"
+            srcset="
+                {{ .file }}?nf_resize=fit&w=589 589w
+                {{ .file }}?nf_resize=fit&w=768 768w
+                {{ .file }}?nf_resize=fit&w=840 840w
+                {{ .file }}?nf_resize=fit&w=960 960w
+            "
+            {{ if eq $i 1 }}
+                sizes="(min-width: 1024px) 50vw, 80vw"
+                width="960"
+                height="664"
+            {{ else if eq $i 3 }}
+                sizes="(min-width: 1024px) 30vw, 80vw"
+                width="589"
+                height="641"
+            {{ else if eq $i 4 }}
+                sizes="(min-width: 1024px) 40vw, 80vw"
+                width="630"
+                height="435"
+            {{ end }}
+            alt="project-image"
+        />
+        {{ end }}
+        </div>
+        <div class="card-info">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  {{ if .IsHome }}
+  <div class="row">
+    <h1 class="st__headline">View all work</h1>
+    <a class="btn__circle" href="/work.html">
+      <p>Discover</p>
+    </a>
+  </div>
+</section>
+{{end}}

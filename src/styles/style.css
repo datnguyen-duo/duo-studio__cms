@@ -1,9 +1,9 @@
 @font-face {
   font-family: "PPMori-Regular";
-  src: local("PPMori-Regular"), local("PPMori-Regular"), url("../fonts/PPMori-Regular.woff2") format("woff2"), url("../fonts/PPMori-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: swap; }
+  font-display: swap;
+  src: local("PPMori-Regular"), local("PPMori-Regular"), url("../fonts/PPMori-Regular.woff2"), url("../fonts/PPMori-Regular.woff"); }
 @font-face {
   font-family: "SuisseIntl-Book-WebS";
   src: url("../fonts/SuisseIntl-Book-WebS.woff2") format("woff2"), url("../fonts/SuisseIntl-Book-WebS.woff2") format("woff");
@@ -1571,6 +1571,8 @@ body:not(.intro-leave) #smooth-wrapper[data-barba-namespace="home"] section {
             #smooth-wrapper[data-barba-namespace="contact"] #banner .container .row .col:last-of-type {
               margin-left: 2em;
               white-space: nowrap; } }
+          #smooth-wrapper[data-barba-namespace="contact"] #banner .container .row .col:last-of-type .inner:first-of-type p a:first-of-type:after, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="contact"] #banner #easter-egg .container > .row > .col:nth-child(1) .row .col:last-of-type .inner:first-of-type .col__inner span.display__inner a:first-of-type:after, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="contact"] #easter-egg #banner .container > .row > .col:nth-child(1) .row .col:last-of-type .inner:first-of-type .col__inner span.display__inner a:first-of-type:after, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="contact"] #banner #easter-egg .container > .row > .col:nth-child(1) .col__inner .row .col:last-of-type .inner:first-of-type span.display__inner a:first-of-type:after, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="contact"] #easter-egg #banner .container > .row > .col:nth-child(1) .col__inner .row .col:last-of-type .inner:first-of-type span.display__inner a:first-of-type:after {
+            content: ","; }
           #smooth-wrapper[data-barba-namespace="contact"] #banner .container .row .col:last-of-type .inner:not(:first-of-type) {
             margin-top: 1em; }
         #smooth-wrapper[data-barba-namespace="contact"] #banner .container .row .col img {

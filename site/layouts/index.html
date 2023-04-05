@@ -1,13 +1,15 @@
 {{ define "main" }}
 
-{{ partial "index/banner" (dict "videoUrl" .Params.video "heading" .Params.headline) }}
+{{ partial "index/client-images" . }}
 
-{{ partial "short-text" .Params.blurb}}
+<main id="smooth-content">
+    
+{{ partial "index/banner" (dict "videoUrl" .Params.banner.video "heading" .Params.banner.headline) }}
 
-{{ partial "2-up" .Params }}
+{{ partial "index/intro" . }}
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+{{ partial "index/work" . }}
 
-{{ partial "blog" . }}
+{{ partial "index/clients" . }}
 
 {{ end }}

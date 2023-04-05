@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+<main id="smooth-content">
+    <section id="work">
+        {{ partial "work/banner" (dict "headline" .Params.banner.headline) }}
+
+        {{ partial "index/work" . }}
+
+    </section>
+
+{{ end }}

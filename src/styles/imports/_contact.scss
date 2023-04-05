@@ -36,6 +36,15 @@
               white-space: nowrap;
             }
             .inner {
+              &:first-of-type {
+                p {
+                  a:first-of-type {
+                    &:after {
+                      content: ","
+                    }
+                  }
+                }
+              }
               &:not(:first-of-type) {
                 margin-top: 1em;
               }

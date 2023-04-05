@@ -1,7 +1,12 @@
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { SplitText } from "gsap/dist/SplitText";
+import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
+
 let scroller;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Draggable);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, Draggable);
 
   gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
@@ -47,8 +52,8 @@ window.addEventListener("load", (event) => {
   // NAV
 
   if (window.innerWidth > 1024) {
-    navItems = document.querySelectorAll(".nav-item, .egg");
-    containerItems = document.querySelectorAll(".nav-container__inner");
+    const navItems = document.querySelectorAll(".nav-item, .egg");
+    const containerItems = document.querySelectorAll(".nav-container__inner");
 
     navItems.forEach((item, i) => {
       var el = containerItems[i].querySelector(".nav-marquee"),
@@ -1380,7 +1385,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     imagesLoaded(
-      scrollContainer.querySelector("section:nth-child(1)"),
+      scrollContainer.querySelector("section:first-of-type"),
       function () {
         window.scrollTo(0, 0);
         scroller = ScrollSmoother.create({
@@ -1393,7 +1398,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   barba.hooks.afterEnter((data) => {
-    console.log(window.location.pathname);
     // ga("set", "page", window.location.pathname);
     // ga("send", "pageview");
     var vids = document.querySelectorAll("video");

@@ -1,11 +1,11 @@
 @font-face {
   font-family: "PPMori-Regular";
-  src: local('PPMori-Regular'), local('PPMori-Regular'),
-    url("../fonts/PPMori-Regular.woff2") format("woff2"),
-    url("../fonts/PPMori-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  src: local('PPMori-Regular'), local('PPMori-Regular'),
+    url("../fonts/PPMori-Regular.woff2"),
+    url("../fonts/PPMori-Regular.woff");
 }
 
 @font-face {

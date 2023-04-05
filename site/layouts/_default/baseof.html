@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.Language.Lang }}">
   {{ partial "head" . }}
-  <body>
-
+  <body data-barba="wrapper">
     {{ block "header" . }}{{ partial "nav" . }}{{end}}
 
+    <div
+      class="barba-container loading"
+      data-barba="container"
+      data-barba-namespace="{{ .Params.Namespace }}"
+      id="smooth-wrapper"
+    >
     {{ block "main" . }}{{ end }}
-
+    
     {{ block "footer" . }}{{ partial "footer" . }}{{end}}
-
-    {{ $script := .Site.Data.webpack.main }}
-    {{ with $script.js }}
-      <script src="{{ relURL . }}"></script>
-    {{ end }}
+    </main>
+    </div>
   </body>
 </html>
 

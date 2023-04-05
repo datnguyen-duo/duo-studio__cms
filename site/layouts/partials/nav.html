@@ -1,32 +1,36 @@
+<div class="cursor">
+  <span></span>
+</div>
+
 <nav>
   <ul>
     <li>
-      <a href="/">
+      <a href="{{ "/" | relURL }}">
         <img src="/assets/logo.svg" alt="logo" width="52" height="35" />
       </a>
     </li>
 
     <li class="nav-item cursor__hover --highlight" data-attribute-item="home">
-      <a href="/">Home</a>
+      <a href="{{ "/" | relURL }}">Home</a>
     </li>
 
     <li class="nav-item cursor__hover --highlight" data-attribute-item="work">
-      <a href="/work.html">Work</a>
+      <a href="{{ "/work" | relURL }}">Work</a>
     </li>
 
     <li class="nav-item cursor__hover --highlight" data-attribute-item="studio">
-      <a href="/studio.html">Studio</a>
+      <a href="{{ "/studio" | relURL }}">Studio</a>
     </li>
 
     <li
       class="nav-item cursor__hover --highlight"
       data-attribute-item="contact"
     >
-      <a href="/contact.html">Contact</a>
+      <a href="{{ "/contact" | relURL }}">Contact</a>
     </li>
 
     <li class="egg" data-attribute-item="easter-egg">
-      <a href="/archive.html" class="cursor__hide">Archive</a>
+      <a href="{{ "/archive" | relURL }}" class="cursor__hide">Archive</a>
     </li>
     <div class="row mobile">
       <div class="col">
@@ -63,3 +67,56 @@
     </div>
   </ul>
 </nav>
+<div class="nav-container">
+  <div class="nav-container__inner home">
+    <div class="nav-marquee">
+      <div class="nav-marquee__container">
+        <div class="nav-marquee__inner">
+          <h1 class="lg">Home</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-container__inner work">
+    <div class="nav-marquee">
+      <div class="nav-marquee__container">
+        <div class="nav-marquee__inner">
+          <h1 class="lg">Work</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-container__inner studio">
+    <div class="nav-marquee">
+      <div class="nav-marquee__container">
+        <div class="nav-marquee__inner">
+          <h1 class="lg">Studio</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-container__inner contact">
+    <div class="nav-marquee">
+      <div class="nav-marquee__container">
+        <div class="nav-marquee__inner">
+          <h1 class="lg">Contact</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-container__inner ec">
+    <div class="nav-marquee">
+      <div class="nav-marquee__container">
+        <div class="nav-marquee__inner">
+          <h1 class="lg">ExtraCredit</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-transition"></div>

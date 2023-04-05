@@ -1,24 +1,78 @@
 {{ define "main" }}
 
-<div class="ph3 bg-off-white">
-	<div class="center mw6 pv3">
+<main id="smooth-content">
+  <section id="banner" class="bg__dark">
+    <div class="container">
+      <h1 class="headline__load">{{ .Params.Headline }}</h1>
+      <div class="row">
+        <div class="col">
+          <img
+            src="{{ .Params.image }}"
+            width="175"
+            height="200"
+            alt="Duo Studio contact image"
+          />
+        </div>
+        <div class="col">
 
-		<img src="{{ .Params.logo }}" alt="" class="db w4 center pv4">
-
-		{{ .Content }}
-
-		<div class="flex-ns mb3">
-	        	{{ range .Params.contact_entries }}
-				<div>
-					<h4 class="f4 b lh-title mb2 primary">{{ .heading }}</h4>
-					<p>{{ .text }}</p>
-				</div>
-			{{ end }}
-		</div>
-
-		{{ partial "contact-form" . }}
-
-	</div>
-</div>
-
+		{{ range .Params.rows }}
+          <div class="inner">
+            <span>{{ .title }}</span>
+			<p>
+				{{ range .links }}
+					<a href="{{ .link }}" 
+					{{ if .new_tab }} 
+					target="_blank" rel="noopener noreferrer"
+					{{ end }}
+					>{{ .label }}</a>
+				{{ end }}
+			</p>
+          </div>
+		  {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="form" class="bg__dark">
+    <h2>{{ .Params.paragraph }}</h2>
+    <form method="POST" name="contact" data-netlify="true">
+      <label for="name" class="input-wrapper">
+        <h3>Name</h3>
+        <input type="text" placeholder="Name" name="name" id="name" required />
+      </label>
+      <label for="email" class="input-wrapper">
+        <h3>Email</h3>
+        <input
+          type="text"
+          placeholder="Email"
+          name="email"
+          id="email"
+          required
+        />
+      </label>
+      <label for="company" class="input-wrapper">
+        <h3>Company</h3>
+        <input type="text" placeholder="Company" name="company" id="company" />
+      </label>
+      <label for="message" class="input-wrapper">
+        <h3>Message</h3>
+        <textarea
+          type="text"
+          placeholder="Message"
+          name="message"
+          id="message"
+          required
+        ></textarea>
+        <input />
+      </label>
+      <button class="btn__circle">
+        <div class="no-overflow">
+          <div class="inner">
+            <p>Send Inquiry</p>
+            <p>Message Sent!</p>
+          </div>
+        </div>
+      </button>
+    </form>
+  </section>
 {{ end }}

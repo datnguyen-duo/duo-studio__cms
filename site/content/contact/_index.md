@@ -1,19 +1,26 @@
 ---
-title: "Contact"
-logo: "/img/logo.svg"
-contact_entries:
-  - heading: Location
-    text: "3153 Lynn Avenue, South San Francisco, California 94080"
-  - heading: Working hours
-    text: "Monday – Saturday: 9AM – 7PM We’re closed on Sundays"
+title: Contact | Duo Studio — A Creative Digital Agency
+namespace: contact
+headline: Let’s reimagine what’s possible
+paragraph: If you’re looking to make an impact, introduce yourself.
+image: /assets/contact/DuoStudio_Verizon--contact-image.webp
+rows:
+  - title: Follow us
+    links:
+      - label: Instagram
+        link: https://www.instagram.com/duostudio_co/
+        new_tab: true
+      - label: LinkedIn
+        link: https://www.linkedin.com/company/duostudio
+        new_tab: true
+  - title: Phone
+    links:
+      - label: (301) 444-5447
+        link: tel:+13014445447
+        new_tab: false
+  - title: General inquiries
+    links:
+      - label: hello@duo-studio.co
+        link: mailto:hello@duo-studio.co
+        new_tab: false
 ---
-
-We’d love to get in touch with you and hear your ideas and
-questions. We strive to grow and improve constantly and your feedback
-is valuable for us.
-
-<h3 class="f4 b lh-title mb2">How can I get…?</h3>
-
-You can also use the form below for any inquiries about coffee
-availability, monthly subscriptions and scheduling a 1-on-1 session
-with our baristas. Don’t be shy, drop us a line!
