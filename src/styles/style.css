@@ -896,7 +896,7 @@ body:not(.intro-leave) #smooth-wrapper[data-barba-namespace="home"] section {
   position: relative;
   width: 100%;
   justify-content: space-between;
-  padding: 32vw 9% 8vw 6vw; }
+  padding: 36vw 9% 12vw 6vw; }
   @media screen and (max-width: 1024px) {
     #smooth-wrapper[data-barba-namespace="home"] #intro .row {
       padding: calc(4rem + 15vh) 1.5rem 4rem; } }

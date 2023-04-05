@@ -122,7 +122,7 @@
       position: relative;
       width: 100%;
       justify-content: space-between;
-      padding: #{$spacer * 4} 9% $spacer $gutter;
+      padding: #{$spacer * 4.5} 9% #{$spacer * 1.5} $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: calc(#{$mobile-spacer} + 15vh) $mobile-gutter $mobile-spacer;
       }

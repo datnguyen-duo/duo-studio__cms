@@ -398,12 +398,12 @@ function loadGlobalScripts() {
         gsap.to(btn, 0.4, {
           x: x * 0.4,
           y: y * 0.4,
-          ease: Power2.easeOut,
+          ease: "Power2.easeOut",
         });
         gsap.to(btn.querySelector("*"), 0.4, {
           x: x * 0.1,
           y: y * 0.1,
-          ease: Power2.easeOut,
+          ease: "Power2.easeOut",
         });
       };
 
