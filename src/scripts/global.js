@@ -1,12 +1,14 @@
 import { gsap } from "gsap/dist/gsap";
+import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { SplitText } from "gsap/dist/SplitText";
-import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
+import { Draggable } from "gsap/dist/Draggable";
+
 
 let scroller;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText, Draggable);
+  gsap.registerPlugin( ScrollSmoother, ScrollTrigger, SplitText, Draggable);
 
   gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
