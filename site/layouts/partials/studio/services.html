@@ -1,0 +1,31 @@
+<section id="services" class="bg__trigger">
+    <header>
+      <h1 class="st__headline lg">{{ .headline }}</h1>
+      <p>{{ .paragraph }}</p>
+    </header>
+    <div class="accordions">
+      {{ range $i, $p := .service }}
+      <div class="accordion col" id="{{ .title | lower }}">
+        <div class="row header">
+          <div class="col">
+            <h1 class="st__headline">{{ .title }}</h1>
+          </div>
+          <div class="col">
+            <span>00{{ add $i 1 }}</span>
+          </div>
+        </div>
+        <div class="row expandable no-overflow">
+          <div class="row inner">
+            <h2>{{ .paragraph }}</h2>
+            {{ range .columns }}
+            <div class="col">
+              <h3>{{ .title }}</h3>
+              <p>{{ .paragraph }}</p>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>

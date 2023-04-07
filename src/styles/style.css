@@ -1156,7 +1156,7 @@ body:not(.intro-leave) #smooth-wrapper[data-barba-namespace="home"] section {
             margin: 0;
             transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
             min-width: 65px; }
-            #smooth-wrapper[data-barba-namespace="home"] #clients header .content .toggle .display__inner:not(:first-of-type) {
+            #smooth-wrapper[data-barba-namespace="home"] #clients header .content .toggle .display__inner:not(:last-of-type) {
               position: absolute;
               top: 0;
               left: 0;
@@ -1233,9 +1233,9 @@ body:not(.intro-leave) #smooth-wrapper[data-barba-namespace="home"] section {
     transform: translateY(-110%) rotate(-5deg); }
   body.init__clients #smooth-wrapper[data-barba-namespace="home"] #clients header .content .no-overflow:nth-child(2) h1:nth-child(2) {
     transform: translateY(0%) rotate(0deg); }
-  body.init__clients #smooth-wrapper[data-barba-namespace="home"] #clients header .content .toggle .display__inner:first-of-type {
+  body.init__clients #smooth-wrapper[data-barba-namespace="home"] #clients header .content .toggle .display__inner:last-of-type {
     transform: translate(0%, -100%); }
-  body.init__clients #smooth-wrapper[data-barba-namespace="home"] #clients header .content .toggle .display__inner:not(:first-of-type) {
+  body.init__clients #smooth-wrapper[data-barba-namespace="home"] #clients header .content .toggle .display__inner:not(:last-of-type) {
     transform: translate(0%, 0%); }
 
 #smooth-wrapper[data-barba-namespace="studio"] #banner {
@@ -1461,8 +1461,13 @@ body:not(.intro-leave) #smooth-wrapper[data-barba-namespace="home"] section {
         top: 0;
         transform: translateY(1em);
         opacity: 0; }
-      #smooth-wrapper[data-barba-namespace="studio"] #testimonial .row .col:nth-child(2) .content h2:not(:first-of-type) {
-        margin-top: 1.5em; }
+      #smooth-wrapper[data-barba-namespace="studio"] #testimonial .row .col:nth-child(2) .content h2 p, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #testimonial #easter-egg .container > .row > .col:nth-child(1) .col:nth-child(2) .content h2 .col__inner span.display__inner, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #easter-egg #testimonial .container > .row > .col:nth-child(1) .col:nth-child(2) .content h2 .col__inner span.display__inner, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #testimonial #easter-egg .container > .row > .col:nth-child(1) .col__inner .col:nth-child(2) .content h2 span.display__inner, #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #easter-egg #testimonial .container > .row > .col:nth-child(1) .col__inner .col:nth-child(2) .content h2 span.display__inner {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        line-break: inherit; }
+        #smooth-wrapper[data-barba-namespace="studio"] #testimonial .row .col:nth-child(2) .content h2 p:not(:first-of-type), #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #testimonial #easter-egg .container > .row > .col:nth-child(1) .col:nth-child(2) .content h2 .col__inner span.display__inner:not(:first-of-type), #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #easter-egg #testimonial .container > .row > .col:nth-child(1) .col:nth-child(2) .content h2 .col__inner span.display__inner:not(:first-of-type), #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #testimonial #easter-egg .container > .row > .col:nth-child(1) .col__inner .col:nth-child(2) .content h2 span.display__inner:not(:first-of-type), #smooth-wrapper[data-barba-namespace="easter-egg"][data-barba-namespace="studio"] #easter-egg #testimonial .container > .row > .col:nth-child(1) .col__inner .col:nth-child(2) .content h2 span.display__inner:not(:first-of-type) {
+          margin-top: 1.5em; }
 #smooth-wrapper[data-barba-namespace="studio"] #team {
   padding: 8vw 0;
   margin-top: -1px;

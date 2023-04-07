@@ -2,10 +2,9 @@
 
 <main id="smooth-content">
     <section id="work">
-        {{ partial "work/banner" (dict "headline" .Params.banner.headline) }}
+        {{ partial "work/banner" (dict "headline" .Params.headline "paragraph" .Params.paragraph) }}
 
         {{ partial "index/work" . }}
 
     </section>
-
 {{ end }}

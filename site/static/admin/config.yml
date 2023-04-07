@@ -32,21 +32,41 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Work", name: work, widget: object, fields: [
               {label: "Headline", name: "headline", widget: string},
               {label: "Projects", name: "projects", widget: "list", fields: [
-                {label: "Image", name: "file", widget: file},
+                {label: Image, name: image, widget: object, fields: [
+                  {label: Source, name: source, widget: file},
+                  {label: Sizes, name: sizes, widget: string, required: false},
+                  {label: Width, name: width, widget: number, required: false},
+                  {label: Height, name: height, widget: number, required: false},
+                  {label: Additional Sources, name: sources, widget: list, required: false, fields: [
+                    {label: File, name: file, widget: file},
+                    {label: Width, name: width, widget: number},
+                  ]}
+                ]},
                 {label: "Title", name: "title", widget: string},
                 {label: "Description", name: "description", widget: string},
                 {label: "Link", name: "link", widget: string}
               ]},
-              {label: "Button", name: "button", widget: "object", fields: [
-                {label: "Text", name: "text", widget: string},
+              {label: "CTA", name: "cta", widget: "object", fields: [
+                {label: "Headline", name: headline, widget: string},
+                {label: "Label", name: "label", widget: string},
                 {label: "Link", name: "link", widget: string}
               ]}]}
           - {label: "Services", name: services, widget: object, fields: [
               {label: "Title", name: "title", widget: string},
               {label: "Service", name: "service", widget: "list", fields: [
                 {label: "Headline", name: "headline", widget: string},
-                {label: "Image", name: "image", widget: image},
-                {label: "Image (2)", name: "image-2", widget: image},
+                {label: "Image", name: "image", widget: object, fields: [
+                  {label: "Source", name: source, widget: image},
+                  {label: "Sizes", name: sizes, widget: string},
+                  {label: Width, name: width, widget: number},
+                  {label: Height, name: height, widget: number},
+                ]},
+                {label: "Image (2)", name: "image_2", widget: object, fields: [
+                  {label: "Source", name: source, widget: image},
+                  {label: "Sizes", name: sizes, widget: string},
+                  {label: Width, name: width, widget: number},
+                  {label: Height, name: height, widget: number},
+                ]},
                 {label: "Link", name: "link", widget: string}
               ]}]}
           - {label: "Collaborators", name: collaborators, widget: list, fields: [
@@ -56,10 +76,9 @@ collections: # A list of collections the CMS should be able to edit
                   {label: "Title", name: "title", widget: string},
                   {label: "Description", name: "description", widget: string},
                   {label: "Year", name: "year", widget: string},
+                  {label: "Link", name: "link", widget: string},
                   {label: "Image", name: "image", widget: image},
-                ]},
-                {label: "Image (2)", name: "image-2", widget: image},
-              ]}]}
+                ]}]}]}
       - file: "site/content/work/_index.md"
         label: "Work"
         name: "work"
@@ -70,12 +89,22 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Namespace, name: namespace, widget: hidden}
           - {label: Headline, name: headline, widget: string}
           - {label: Paragraph, name: paragraph, widget: text}
-          - {label: "Projects", name: "projects", widget: "list", fields: [
-                {label: "Image", name: "file", widget: file},
+          - {label: "Work", name: work, widget: object, fields: [
+              {label: "Projects", name: "projects", widget: "list", fields: [
+                {label: Image, name: image, widget: object, fields: [
+                  {label: Source, name: source, widget: file},
+                  {label: Sizes, name: sizes, widget: string, required: false},
+                  {label: Width, name: width, widget: number, required: false},
+                  {label: Height, name: height, widget: number, required: false},
+                  {label: Additional Sources, name: sources, widget: list, required: false, fields: [
+                    {label: File, name: file, widget: file},
+                    {label: Width, name: width, widget: number},
+                  ]}
+                ]},
                 {label: "Title", name: "title", widget: string},
                 {label: "Description", name: "description", widget: string},
                 {label: "Link", name: "link", widget: string}
-              ]}
+              ]}]}
       - file: "site/content/studio/_index.md"
         label: "Studio"
         name: "studio"
@@ -86,16 +115,53 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Namespace, name: namespace, widget: hidden}
           - {label: "Banner", name: banner, widget: object, fields: [
               {label: "Headline", name: "headline", widget: string},
-              {label: Image, name: image, widget: image},
-              {label: Image (2), name: image_2, widget: image}]}
-          - {label: Paragraph, name: paragraph, widget: text}
-          - {label: Image, name: image, widget: image}
-          - {label: Rows, name: rows, widget: list, fields: [
-              {label: Title, name: title, widget: string},
-              {label: Links, name: links, widget: list, fields: [
-                {label: Label, name: label, widget: string},
-                {label: link, name: link, widget: string},
-                {label: Open in new tab, name: new_tab, widget: boolean, required: false}
+              {label: "Title", name: title, widget: string},
+              {label: "Paragraph", name: paragraph, widget: text},
+              {label: Image, name: image, widget: object, fields: [
+                {label: Source, name: source, widget: file},
+                {label: Sizes, name: sizes, widget: string, required: false},
+                {label: Width, name: width, widget: number, required: false},
+                {label: Height, name: height, widget: number, required: false},
+                {label: Additional Sources, name: sources, widget: list, required: false, fields: [
+                  {label: File, name: file, widget: file},
+                  {label: Width, name: width, widget: number},
+                ]}
+              ]},
+              {label: Image (2), name: image_2, widget: object, fields: [
+                {label: Source, name: source, widget: file},
+                {label: Sizes, name: sizes, widget: string, required: false},
+                {label: Width, name: width, widget: number, required: false},
+                {label: Height, name: height, widget: number, required: false},
+                {label: Additional Sources, name: sources, widget: list, required: false, fields: [
+                  {label: File, name: file, widget: file},
+                  {label: Width, name: width, widget: number},
+                ]}
+              ]}]}
+          - {label: Services, name: services, widget: object, fields: [
+              {label: Headline, name: headline, widget: string},
+              {label: Paragraph, name: paragraph, widget: text},
+              {label: Service, name: service, widget: list, fields: [
+                {label: Title, name: title, widget: string},
+                {label: Paragraph, name: paragraph, widget: text},
+                {label: Columns, name: columns, widget: list, fields: [
+                  {label: Title, name: title, widget: string},
+                  {label: Paragraph, name: paragraph, widget: text}
+                ]}
+              ]}
+            ]}
+          - {label: Testimonials, name: testimonials, widget: object, fields: [
+              {label: Testimonial, name: testimonial, widget: list, fields: [
+                {label: Company, name: company, widget: string},
+                {label: Name, name: name, widget: string},
+                {label: Quote, name: quote, widget: markdown}
+              ]}
+            ]}
+          - {label: Team, name: team, widget: object, fields: [
+              {label: Headline, name: headline, widget: string},
+              {label: Members, name: members, widget: list, fields: [
+                {label: Name, name: name, widget: string},
+                {label: Title, name: title, widget: string},
+                {label: Image, name: image, widget: image}
               ]},
           ]}
       - file: "site/content/contact/_index.md"
@@ -132,6 +198,15 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+      - file: "site/content/404/_index.md"
+        label: "404"
+        name: "404"
+        media_folder: '/site/static/assets/home'
+        public_folder: '/assets/home'
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Namespace, name: namespace, widget: hidden}
+          - {label: Headline, name: headline, widget: string}
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     editor:

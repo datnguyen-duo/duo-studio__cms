@@ -1,0 +1,23 @@
+{{ define "main" }}
+
+<main id="smooth-content">
+
+    {{ partial "studio/banner" (dict 
+        "headline" .Params.banner.headline 
+        "title" .Params.banner.title
+        "paragraph" .Params.banner.paragraph 
+        "image" .Params.banner.image
+        "image_2" .Params.banner.image_2
+        )}}
+
+    {{ partial "studio/services" (dict 
+        "headline" .Params.services.headline 
+        "paragraph" .Params.services.paragraph 
+        "service" .Params.services.service
+        )}}
+
+    {{ partial "studio/testimonials" (dict "testimonial" .Params.testimonials.testimonial)}}
+
+    {{ partial "studio/team" (dict "headline" .Params.team.headline "members" .Params.team.members)}}
+
+{{ end }}

@@ -1,0 +1,36 @@
+<section id="team">
+  <div class="st__line"></div>
+
+  <header class="row">
+    <h1 class="st__headline">{{ .headline }}</h1>
+    <div class="pagination">
+      <div class="scrollbar-container">
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </header>
+  <div
+    class="swiper slider__draggable cursor__hover"
+    data-attribute-text="drag"
+  >
+    <div class="swiper-wrapper">
+      {{ range .members }}
+      <div class="swiper-slide">
+        <img
+          srcset="{{ .image | absURL }} 390w"
+          sizes="(min-width: 1024px) 24vw, 58vw"
+          src="{{ .image | absURL }}"
+          alt="team-image"
+          width="390"
+          height="430"
+          loading="lazy"
+        />
+        <div class="team-info">
+          <h3>{{ .name }}</h3>
+          <p>{{ .title }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

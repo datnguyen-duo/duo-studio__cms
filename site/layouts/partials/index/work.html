@@ -12,9 +12,9 @@
     >
       <div class="inner st__image" {{ if (modBool $i 2) }}data-attribute-pos="right"{{ end }}>
         <div class="img-wrapper">
-        {{ if strings.Contains .file "mp4" }}
+        {{ if strings.Contains .image.source "mp4" }}
           <video
-            src="{{ .file }}"
+            src="{{ .image.source }}"
             playsinline
             muted
             loop
@@ -23,27 +23,15 @@
           ></video>
         {{ else }}
         <img
-            src="{{ .file | absURL }}"
-            srcset="
-                {{ .file | absURL }}?nf_resize=fit&w=589 589w
-                {{ .file | absURL }}?nf_resize=fit&w=768 768w
-                {{ .file | absURL }}?nf_resize=fit&w=840 840w
-                {{ .file | absURL}}?nf_resize=fit&w=960 960w
-            "
-            {{ if eq $i 1 }}
-                sizes="(min-width: 1024px) 50vw, 80vw"
-                width="960"
-                height="664"
-            {{ else if eq $i 3 }}
-                sizes="(min-width: 1024px) 30vw, 80vw"
-                width="589"
-                height="641"
-            {{ else if eq $i 4 }}
-                sizes="(min-width: 1024px) 40vw, 80vw"
-                width="630"
-                height="435"
-            {{ end }}
+            srcset="{{ .image.source | absURL }} {{ .image.width }}w
+                    {{ range .image.sources }}
+                    {{ .file | absURL }} {{ .width }}w,
+                    {{ end }}"
+            sizes="(min-width: 1024px) {{ .image.sizes }}"
+            src="{{ .image.source | absURL }}"
             alt="project-image"
+            width="{{ .image.width }}"
+            height="{{ .image.height }}"
         />
         {{ end }}
         </div>
@@ -57,9 +45,9 @@
   </div>
   {{ if .IsHome }}
   <div class="row">
-    <h1 class="st__headline">View all work</h1>
-    <a class="btn__circle" href="/work.html">
-      <p>Discover</p>
+    <h1 class="st__headline">{{ .Params.work.cta.headline }}</h1>
+    <a class="btn__circle" href="{{ .Params.work.cta.link | relURL }}">
+      <p>{{ .Params.work.cta.label }}</p>
     </a>
   </div>
 </section>

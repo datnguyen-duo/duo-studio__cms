@@ -311,9 +311,16 @@
               opacity: 0;
             }
             h2 {
-              &:not(:first-of-type) {
-                margin-top: 1.5em;
+              p {
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                line-break: inherit;
+                &:not(:first-of-type) {
+                  margin-top: 1.5em;
+                }
               }
+              
             }
           }
         }

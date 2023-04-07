@@ -1,0 +1,26 @@
+
+<section
+id="testimonial"
+class="cursor__hover"
+data-attribute-text="Read Next"
+>
+<div class="row">
+
+  <div class="col">
+    {{ range .testimonial }}
+    <div class="inner">
+        <span>{{ .company }}</span>
+        <p>{{ .name }}</p>
+    </div>
+    {{ end }}
+    <div class="mobile btn__mobile"><p>Read Next</p></div>
+  </div>
+  <div class="col">
+    {{ range .testimonial }}
+    <div class="content">
+      <h2>{{ .quote | markdownify }}</h2>
+    </div>
+    {{ end }}
+  </div>
+</div>
+</section>

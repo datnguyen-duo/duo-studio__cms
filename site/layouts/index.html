@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-{{ partial "index/client-images" . }}
+{{ partial "index/client-images" (dict "collaborators" .Params.collaborators) }}
 
 <main id="smooth-content">
     
@@ -10,6 +10,6 @@
 
 {{ partial "index/work" . }}
 
-{{ partial "index/clients" . }}
+{{ partial "index/clients" (dict "title" .Params.services.title "service" .Params.services.service "collaborators" .Params.collaborators) }}
 
 {{ end }}

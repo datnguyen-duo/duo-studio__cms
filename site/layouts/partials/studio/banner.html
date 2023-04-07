@@ -1,0 +1,37 @@
+<section id="banner" class="bg__dark">
+    <h1 class="top lg headline__load">{{ .headline }}</h1>
+    <div class="row">
+      <div class="col minor">
+        <h3>{{ .title }}</h3>
+        <p>{{ .paragraph }}</p>
+      </div>
+      <div class="col major">
+        <div class="st__image-container">
+          <img
+            srcset="{{ .image.source | absURL }} {{ .image.width }}w"
+            sizes="(min-width: 1024px) {{ .image.sizes }}"
+            src="{{ .image.source | absURL }}"
+            alt="studio-image"
+            class="st__image"
+            width="{{ .image.width }}"
+            height="{{ .image.height }}"
+            data-attribute-pos="right"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="st__image-container">
+      <img
+        src="{{ .image_2.source | absURL  }}"
+        srcset="{{ range .image_2.sources }}{{ .file }} {{ .width }}w,{{ end }}
+        {{ .image_2.source | absURL  }} {{ .image_2.width }}w"
+        sizes="(min-width: 1024px) {{ .image_2.sizes }}"
+        alt="studio-image"
+        class="st__image"
+        loading="lazy"
+        width="{{ .image_2.width }}"
+        height="{{ .image_2.height }}"
+      />
+    </div>
+  </section>

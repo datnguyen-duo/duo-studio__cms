@@ -1,14 +1,13 @@
-import { gsap } from "gsap/dist/gsap";
+import { gsap, Elastic } from "gsap/dist/gsap";
 import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { SplitText } from "gsap/dist/SplitText";
 import { Draggable } from "gsap/dist/Draggable";
 
-
 let scroller;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  gsap.registerPlugin( ScrollSmoother, ScrollTrigger, SplitText, Draggable);
+  gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText, Draggable);
 
   gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
@@ -561,7 +560,7 @@ function loadIndexScripts() {
     scrollTrigger: {
       trigger: "#banner",
       start: "5px top",
-      
+
       ease: "expo.inOut",
     },
   });
@@ -671,8 +670,8 @@ function loadIndexScripts() {
         document
           .querySelector("#clients header")
           .classList.remove("no-pointer");
-        ScrollTrigger.refresh();
         scroller.paused(false);
+        ScrollTrigger.refresh();
       },
     });
     tl.to(".container__inner", { opacity: 0 });
@@ -737,9 +736,9 @@ function loadIndexScripts() {
         scroller.paused(true);
       },
       onComplete: function () {
-        ScrollTrigger.refresh();
         document.body.classList.add("bg__dark");
         scroller.paused(false);
+        ScrollTrigger.refresh();
       },
     });
     tl.set(selected, { display: "block" });

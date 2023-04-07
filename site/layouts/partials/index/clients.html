@@ -2,380 +2,102 @@
   <div class="row collage">
     <div class="st__line"></div>
     <div class="content">
-      <p class="subtitle">Designed to bring out the truth of your brand</p>
+      <p class="subtitle"> {{ .title }}</p>
+      {{ range .service }}
       <a
         class="hover__headline cursor__hover --highlight"
         href="/studio.html#strategy"
       >
-        <h1 class="st__headline lg" id="strategy">Strategy</h1>
-        <h1 class="lg" id="strategy">Strategy</h1>
+        <h1 class="st__headline lg" id="strategy">{{ .headline }}</h1>
+        <h1 class="lg" id="strategy">{{ .headline }}</h1>
       </a>
       <img
-        src="/assets/home/home-strategy-1.webp"
-        srcset="/assets/home/home-strategy-1.webp 350w"
-        sizes="(min-width: 1024px) 18vw"
-        class="strategy minor"
+        srcset="{{ .image.source }} {{ .image.width }}w"
+        src="{{ .image.source }}"
+        sizes="(min-width: 1024px) {{ .image.sizes }}"
+        class="{{ .headline | lower }} minor"
         alt="process-image"
+        width="{{ .image.width }}"
+        height="{{ .image.height }}"
       />
       <img
-        src="/assets/home/home-strategy-2.webp"
-        srcset="/assets/home/home-strategy-2.webp 540w"
-        sizes="(min-width: 1024px) 28vw"
-        class="strategy major"
+        srcset="{{ .image_2.source }} {{ .image_2.width }}w"
+        src="{{ .image_2.source }}"
+        sizes="(min-width: 1024px) {{ .image_2.sizes }}"
+        class="{{ .headline | lower }} major"
         alt="process-image"
+        width="{{ .image_2.width }}"
+        height="{{ .image_2.height }}"
       />
-      <a
-        class="hover__headline cursor__hover --highlight"
-        href="/studio.html#identity"
-      >
-        <h1 class="st__headline lg" id="identity">Identity</h1>
-        <h1 class="lg" id="identity">Identity</h1>
-      </a>
-      <img
-        src="/assets/home/home-identity-1.webp"
-        srcset="/assets/home/home-identity-1.webp 330w"
-        sizes="(min-width: 1024px) 17vw"
-        class="identity minor"
-        alt="process-image"
-      />
-      <img
-        src="/assets/home/home-identity-2.webp"
-        srcset="/assets/home/home-identity-2.webp 425w"
-        sizes="(min-width: 1024px) 22vw"
-        class="identity major"
-        alt="process-image"
-      />
-      <a
-        class="hover__headline cursor__hover --highlight"
-        href="/studio.html#experience"
-      >
-        <h1 class="st__headline lg" id="experience">Experience</h1>
-        <h1 class="lg" id="experience">Experience</h1>
-      </a>
-      <img
-        src="/assets/home/home-experience-1.webp"
-        srcset="/assets/home/home-experience-1.webp 480w"
-        sizes="(min-width: 1024px) 25vw"
-        class="experience minor"
-        alt="process-image"
-      />
-      <img
-        src="/assets/home/home-experience-2.webp"
-        srcset="/assets/home/home-experience-2.webp 385w"
-        sizes="(min-width: 1024px) 20vw"
-        class="experience major"
-        alt="process-image"
-      />
+      {{ end }}
     </div>
     <div class="st__line bottom"></div>
   </div>
   <header class="row">
     <div class="content">
-      <div class="no-overflow cursor__hover --highlight st__headline">
-        <h1>Mentions</h1>
-        <h1>Mentions</h1>
-      </div>
-      <div class="no-overflow cursor__hover --highlight">
-        <h1 class="st__headline">Clients</h1>
-        <h1>Clients</h1>
-      </div>
+      {{ range $i, $p := .collaborators }}
+        {{ if eq 0 $i }}
+        <div class="no-overflow cursor__hover --highlight st__headline">
+          <h1>{{ .group.headline }}</h1>
+          <h1>{{ .group.headline }}</h1>
+        </div>
+        {{ else }}
+        <div class="no-overflow cursor__hover --highlight">
+          <h1 class="st__headline">{{ .group.headline }}</h1>
+          <h1>{{ .group.headline }}</h1>
+        </div>
+        {{ end }}
+      {{ end }}
       <p class="toggle subtitle">
         View
         <span class="display">
-          <span class="display__inner">clients</span
-          ><span class="display__inner">mentions</span>
+          {{ range .collaborators }}
+            <span class="display__inner">{{ .group.headline | lower }}</span>
+          {{ end }}
         </span>
       </p>
     </div>
   </header>
 
   <div class="container">
-    <div class="container__inner col -mentions cursor__hide">
+    {{ range .collaborators }}
+    <div class="container__inner col -{{ .group.headline | lower }} cursor__hide">
+      {{ range first 5 .group.row }}
       <a
-        href="https://www.verizon.com/business/resources/customer-success-stories/duo-studio-small-traveling-business/"
+        href="{{ .link }}"
         target="_blank"
         rel="noopener noreferrer"
         class="inner row st__text"
       >
         <div class="row wrapper">
-          <h3>Verizon</h3>
-          <p>Small Business Feature</p>
-          <p>2021</p>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+          <p>{{ .year }}</p>
         </div>
       </a>
-      <a
-        href="https://www.awwwards.com/sites/duo-studio"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Awwwards</h3>
-          <p>Honorable Mention</p>
-          <p>2020</p>
-        </div>
-      </a>
-      <a
-        href="https://www.awwwards.com/sites/duo-studio/mobile-excellence-report"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Awwwards</h3>
-          <p>Mobile Excellence</p>
-          <p>2020</p>
-        </div>
-      </a>
-
-      <a
-        href="https://mindsparklemag.com/website/duo-studio/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Mindsparkle Mag</h3>
-          <p>Site of the Day</p>
-          <p>2020</p>
-        </div>
-      </a>
-
-      <a
-        href="https://orpetron.com/sites/duo-studio/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Orpetron</h3>
-          <p>Site of the Day</p>
-          <p>2020</p>
-        </div>
-      </a>
-    </div>
-
-    <div class="container__inner col -clients cursor__hide">
-      <a
-        href="https://amparoart.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Amparo</h3>
-          <p>Art & E-Commerce</p>
-          <p>2020</p>
-        </div>
-      </a>
-      <a
-        href="https://apolloxstill.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>ApolloXstill</h3>
-          <p>Cannabis & Hemp Extraction</p>
-          <p>2020</p>
-        </div>
-      </a>
-      <a
-        href="https://cruefilms.co/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Cruefilms</h3>
-          <p>Videography & Portfolio</p>
-          <p>2021</p>
-        </div>
-      </a>
-
-      <a
-        href="https://www.finturity.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text"
-      >
-        <div class="row wrapper">
-          <h3>Finturity</h3>
-          <p>Retirement Planning</p>
-          <p>2022</p>
-        </div>
-      </a>
-
-      <p class="subtitle load-more st__text cursor__hover --highlight">
+      {{ end }}
+      
+      {{ if strings.Contains .group.headline "Clients" }}
+      <p class="subtitle load-more cursor__hover --highlight">
         Load More
       </p>
+      {{end}}
 
+      {{ range after 5 .group.row  }}
       <a
-        href="https://www.gatapack.com/"
+        href="{{ .link }}"
         target="_blank"
         rel="noopener noreferrer"
         class="inner row st__text next"
       >
         <div class="row wrapper">
-          <h3>GATAPACK</h3>
-          <p>Face Masks, Survival Gear & E-Commerce</p>
-          <p>2020</p>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+          <p>{{ .year }}</p>
         </div>
       </a>
-
-      <a
-        href="https://www.genimexgroup.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Genimex</h3>
-          <p>Contract Manufacturing</p>
-          <p>2022</p>
-        </div>
-      </a>
-
-      <a
-        href="https://itllc.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Infinity Technology</h3>
-          <p>Engineering Consulting</p>
-          <p>2020</p>
-        </div>
-      </a>
-
-      <a
-        href="https://innercosmos.io/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Inner Cosmos</h3>
-          <p>Neurotech Product</p>
-          <p>2021</p>
-        </div>
-      </a>
-
-      <a
-        href="http://landrec.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Landrec</h3>
-          <p>Playgrounds & E-Commerce</p>
-          <p>2021</p>
-        </div>
-      </a>
-
-      <a
-        href="https://www.luminastudio.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Lumina Studio Theatre</h3>
-          <p>Theatre & E-Commerce</p>
-          <p>2021</p>
-        </div>
-      </a>
-
-      <a
-        href="https://madegood.world/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Made Good Co</h3>
-          <p>Videography & Portfolio</p>
-          <p>2020</p>
-        </div>
-      </a>
-
-      <a
-        href="https://miraclemaidsservices.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Miracle Maids</h3>
-          <p>Commercial & Residential Cleaning</p>
-          <p>2020</p>
-        </div>
-      </a>
-
-      <a
-        href="https://mgnyconsulting.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>MGNY Consulting</h3>
-          <p>Real Estate Consultant</p>
-          <p>2022</p>
-        </div>
-      </a>
-      <a
-        href="https://www.rankpay.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>RankPay</h3>
-          <p>Digital Marketing</p>
-          <p>2021</p>
-        </div>
-      </a>
-      <a
-        href="https://samatahealth.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Samata Health</h3>
-          <p>Mental Health & SaaS</p>
-          <p>2020</p>
-        </div>
-      </a>
-
-      <a
-        href="https://www.tiverbatim.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>TI Verbatim</h3>
-          <p>Business Development</p>
-          <p>2022</p>
-        </div>
-      </a>
-
-      <a
-        href="https://www.investuncommon.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inner row st__text next"
-      >
-        <div class="row wrapper">
-          <h3>Uncommon Capital Group</h3>
-          <p>Real Estate Investment</p>
-          <p>2020</p>
-        </div>
-      </a>
+      {{ end }}
     </div>
+    {{ end }}
   </div>
 </section>

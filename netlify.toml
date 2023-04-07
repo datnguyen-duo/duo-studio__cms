@@ -18,3 +18,8 @@
 
   [plugins.inputs]
     record = true
+
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
